@@ -2,11 +2,14 @@ package console;
 
 import java.util.Random;
 import java.util.Scanner;
+
 /**
- * Sortear um número pseudo-randomico Pedir para o usuario tentar acertar 
- * Caso ele erre, pedir para tentar novamente
+ * Sortear um número pseudo-randomico Pedir para o usuario tentar acertar Caso
+ * ele erre, pedir para tentar novamente
  *
  * sortear numeros de 1 a 15
+ * 
+ * Utilizando o console
  */
 public class Sorteio {
 
@@ -22,6 +25,14 @@ public class Sorteio {
 		do {
 			System.out.println("\nDigite um número entre 1 e 15: ");
 			digitado = scanner.nextInt();
+
+			// se o user não inserir o numero entre 1 e 15, repetir continuamente
+			do {
+				if (digitado < 1 || digitado > 15) {
+					System.out.println("\nDigite um número entre 1 e 15: ");
+					digitado = scanner.nextInt();
+				}
+			} while (digitado < 1 || digitado > 15);
 
 			int sorteio = random.nextInt(15) + 1;
 
